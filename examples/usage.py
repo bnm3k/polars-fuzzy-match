@@ -5,10 +5,11 @@ from polars_fuzzy_match import fuzzy_match
 def main():
     df = pl.DataFrame(
         {
-            "strs": ["foo", "barz", "quz"],
+            "strs": ["foo", "barz", "quz", "foobar", "for"],
         }
     )
-    out = df.with_columns(is_hit=fuzzy_match(pl.col("strs")))
+    needle = "foo"
+    out = df.with_columns(score=fuzzy_match(pl.col("strs"), needle))
     print(out)
 
 
