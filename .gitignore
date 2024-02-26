@@ -1,0 +1,10 @@
+# rust
+target/
+.build-dev
+polars_fuzzy_match/*.so
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc

@@ -1,0 +1,14 @@
+[package]
+name = "polars_fuzzy_match"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "polars_fuzzy_match"
+crate-type = ["cdylib"]
+
+[dependencies]
+polars = { version = "*" }
+pyo3 = { version = "*", features = ["extension-module"] }
+pyo3-polars = { version = "*", features = ["derive"] }
+serde = { version = "*", features = ["derive"] }
