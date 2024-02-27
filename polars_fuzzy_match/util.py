@@ -5,7 +5,10 @@ from typing import TYPE_CHECKING
 import polars as pl
 
 if TYPE_CHECKING:
-    from polars.type_aliases import IntoExpr, PolarsDataType
+    from polars.type_aliases import (
+        IntoExpr,
+        PolarsDataType,
+    )
 
 
 def parse_into_expr(
