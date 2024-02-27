@@ -16,6 +16,9 @@ requires-python = ">=3.10"
 "Change Log" = "https://github.com/bnm3k/polars-fuzzy-match/releases"
 "Issue Tracker" = "https://github.com/bnm3k/polars-fuzzy-match/issues"
 
+[build-system]
+requires = ["maturin>=1.0,<2.0", "polars>=0.20.6"]
+build-backend = "maturin"
 
 [tool.ruff]
 line-length = 80

@@ -1,3 +1,4 @@
+#![allow(clippy::unused_unit)]
 use polars::prelude::*;
 use pyo3_polars::derive::polars_expr;
 use pyo3_polars::export::polars_core::utils::CustomIterTools;
@@ -50,7 +51,7 @@ pub enum PatternCaseMatching {
 // exact match
 #[polars_expr(output_type=UInt32)]
 fn fuzzy_match_score(haystack: &[Series], kwargs: FuzzyMatchKwargs) -> PolarsResult<Series> {
-    let ca = (&haystack[0]).str()?;
+    let ca = haystack[0].str()?;
 
     // config
     let config = nucleo::Config::DEFAULT;
@@ -62,7 +63,7 @@ fn fuzzy_match_score(haystack: &[Series], kwargs: FuzzyMatchKwargs) -> PolarsRes
         .map(|v: Option<&str>| {
             if let Some(s) = v {
                 let haystack = Utf32Str::new(s, &mut buf);
-                pattern.score(haystack, &mut matcher).map(|v| v as u32)
+                pattern.score(haystack, &mut matcher)
             } else {
                 None
             }
