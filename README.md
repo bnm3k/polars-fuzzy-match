@@ -2,28 +2,14 @@
 
 ## Installation
 
-First install maturin:
-
 ```
-pip install maturin
-```
-
-To install `polars-fuzzy-match`, clone the repo and `cd` into it:
-
-```
-git clone git@github.com:bnm3k/polars-fuzzy-match.git
-cd polars-fuzzy-match
+pip install polars
+pip install polars-fuzzy-match
 ```
 
-From there, build it:
+## Usage
 
-```
-maturin develop --release
-```
-
-## Basic Example
-
-With both the plugin and polars installed, start as follows:
+With both the plugin and polars installed, usage is as follows:
 
 ```python
 import polars as pl
