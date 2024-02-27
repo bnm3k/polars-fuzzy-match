@@ -1027,6 +1027,7 @@ name = "polars_fuzzy_match"
 version = "0.1.0"
 dependencies = [
  "nucleo",
+ "nucleo-matcher",
  "polars",
  "pyo3",
  "pyo3-polars",

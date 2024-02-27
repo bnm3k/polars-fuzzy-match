@@ -9,6 +9,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 nucleo = "0.4.0"
+nucleo-matcher = "0.3.1"
 polars = { version = "*" }
 pyo3 = { version = "*", features = ["extension-module"] }
 pyo3-polars = { version = "*", features = ["derive"] }
