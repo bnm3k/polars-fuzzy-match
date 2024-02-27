@@ -1,3 +1,22 @@
+[project]
+name = "polars-fuzzy-match"
+description = "Polars extension for fzf-style fuzzy matching "
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+  "Programming Language :: Rust",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+requires-python = ">=3.10"
+
+[project.urls]
+"Repository" = "https://github.com/bnm3k/polars-fuzzy-match"
+"Documentation" = "https://github.com/bnm3k/polars-fuzzy-match/blob/master/README.md"
+"Change Log" = "https://github.com/bnm3k/polars-fuzzy-match/releases"
+"Issue Tracker" = "https://github.com/bnm3k/polars-fuzzy-match/issues"
+
+
 [tool.ruff]
 line-length = 80
 indent-width = 4
