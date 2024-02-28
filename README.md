@@ -89,7 +89,7 @@ that this section is taken almost verbatim from the Fzf README:
 | Pattern   | Match type                 | Description                                 |
 | --------- | -------------------------- | ------------------------------------------- |
 | `bar`     | fuzzy                      | items that fuzzy match `bar` e.g. 'bXXaXXr' |
-| `'foo`    | substring exact match      | items that include `wild` e.g. 'is foo ok'  |
+| `'foo`    | substring exact match      | items that include `foo` e.g. 'is foo ok'  |
 | `^music`  | prefix exact match         | items that start with `music`               |
 | `.mp3$`   | suffix exact match         | items that end with `.mp3`                  |
 | `!fire`   | inverse exact match        | items that do not include `fire`            |
