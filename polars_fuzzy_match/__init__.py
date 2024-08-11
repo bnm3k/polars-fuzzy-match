@@ -1,12 +1,11 @@
 from enum import Enum
-
+from pathlib import Path
 import polars as pl
 from polars.type_aliases import IntoExpr
-from polars.utils.udfs import _get_shared_lib_location
+from polars.plugins import register_plugin_function
 
 from polars_fuzzy_match.util import parse_into_expr
 
-lib = _get_shared_lib_location(__file__)
 
 
 class Normalization(Enum):
@@ -68,13 +67,15 @@ def fuzzy_match_score(
     case_matching: CaseMatching = CaseMatching.SMART,
 ) -> pl.Expr:
     expr = parse_into_expr(expr)
-    return expr.register_plugin(
-        lib=lib,
-        symbol='fuzzy_match_score',
+    return register_plugin_function(
+        plugin_path=Path(__file__).parent,
+        function_name="fuzzy_match_score",
         is_elementwise=True,
+        args=expr,
         kwargs={
-            'pattern': pattern,
-            'normalization': str(normalization),
-            'case_matching': str(case_matching),
+            "pattern": pattern,
+            "normalization": str(normalization),
+            "case_matching": str(case_matching),
         },
     )
+
